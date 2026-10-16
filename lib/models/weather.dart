@@ -15,6 +15,7 @@ class Weather {
   final int humidity;
   final double wind;
   final int code;
+  final String updatedAt;
   final List<DailyForecast> daily;
 
   Weather({
@@ -25,6 +26,7 @@ class Weather {
     required this.humidity,
     required this.wind,
     required this.code,
+    required this.updatedAt,
     required this.daily,
   });
 
@@ -48,6 +50,7 @@ class Weather {
       humidity: c['relative_humidity_2m'],
       wind: (c['wind_speed_10m'] as num).toDouble(),
       code: c['weather_code'],
+      updatedAt: c['time'],
       daily: days,
     );
   }
